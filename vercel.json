@@ -2,4 +2,15 @@
   "github": {
     "silent": true
   }
+  {
+  "builds": [
+    { "src": "index.html", "use": "@vercel/static" },  
+    { "src": "public/*.js", "use": "@vercel/static" }
+  ],
+
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.html" },
+    { "src": "/public/(.*)", "dest": "/public/$1" }
+  ]
+}
 }
